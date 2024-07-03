@@ -13,13 +13,16 @@ public:
 				}
 			}
 			else if (number == 6) {
-				result.push_back(2);
-				result.push_back(3);
+				for (divisor = 2; number > 1; divisor++) {
+					while (number % divisor == 0) {
+						result.push_back(divisor);
+						number /= divisor;
+					}
+				}
 			}
 			else {
 				result.push_back(number);
 			}
-
 		}
 		return result;
 	}
